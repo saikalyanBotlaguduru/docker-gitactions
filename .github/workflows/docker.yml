@@ -16,5 +16,17 @@ jobs:
               run: echo "docker login"
             - name: docker publish
               run: echo "docker publish"
+    deploy:
+        needs: docker
+        concurrency: 
+            group: prod-deploy
+            cancel-in-progress: true
+        runs-on: ubuntu-latest
+        steps:
+            - name: Docker run
+              run: |
+               echo "docker deploy "
+               sleep 600
+            
 
 
