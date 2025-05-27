@@ -17,6 +17,7 @@ jobs:
             - name: docker publish
               run: echo "docker publish"
     deploy:
+        timeout-minutes: 1
         needs: docker
         concurrency: 
             group: prod-deploy
@@ -24,6 +25,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Docker run
+              timeout-minutes: 1
               run: |
                echo "docker deploy "
                sleep 600
