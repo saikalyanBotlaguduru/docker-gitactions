@@ -10,12 +10,12 @@ jobs:
            matrix:
                 os: [ubuntu-latest,windows-latest]
                 images: [hello-world,alpine]
-        runs-on: ${{matrix.os}}
+        runs-on: ${{ matrix.os }}
         steps:
         - name: echo docker details 
           run:  docker info
         - name: run image on ${{matrix.os}} with ${{matrix.images}}
-          run:  docker run {{matrix.images}}
+          run:  docker run {{ matrix.images }}
           
             
             
