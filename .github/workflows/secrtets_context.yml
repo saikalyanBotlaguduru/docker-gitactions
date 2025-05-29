@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         test-group: [4, 2]
-        node: [9, 16]
+        node: [9, 9]
     steps:
       - run: echo "Mock test logs" > test-job-${{ strategy.job-index }}.txt
       - name: Upload logs
