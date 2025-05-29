@@ -1,4 +1,4 @@
-name: matrix example
+name: beforer matrix example
 
 on: 
     push:
